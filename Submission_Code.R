@@ -1,7 +1,7 @@
 
 remove(list = ls())
 
-setwd("D:/Projects/External/Int/Fintro/R Workspace")
+setwd("./Fintro/R Workspace")
 library(gbm)
 library(pROC)
 
@@ -169,4 +169,4 @@ pred_gbm_5000_test <- predict(model_gbm_trial_5000, newdata = data_final[which(d
 submission <- data.frame(data_final[which(data_final$flag == 'test'), "ID"], pred_gbm_5000_test)
 colnames(submission) <- c("ID",	"Business_Sourced")
 
-write.csv(submission, "D:/Projects/External/Int/Fintro/Submission/submission_gbm_Final_Post_Mortem.csv", row.names = FALSE)
+write.csv(submission, "./Fintro/Submission/submission_gbm_Final_Post_Mortem.csv", row.names = FALSE)
